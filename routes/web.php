@@ -24,4 +24,4 @@ Route::resource('/game', StudentController::class);
 
 Route::resource('/picture', sampleController::class);
 
-Route::get('/picture/create',[sampleController::class, 'create'])->name('home.create');
+Route::get('/picture/create',[sampleController::class, 'game'])->name('home.create');

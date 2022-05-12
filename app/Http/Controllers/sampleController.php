@@ -24,10 +24,15 @@ class sampleController extends Controller
      */
     public function create()
     {
+      
+    }
+
+
+    public function game()
+    {
         return view('images.create');
 
     }
-
     /**
      * Store a newly created resource in storage.
      *
