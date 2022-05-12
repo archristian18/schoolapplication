@@ -56,7 +56,7 @@ class StudentController extends Controller
   
     public function update(Request $request, $id)
     {
-        // POST, (IF JAVASCRIPT  PATCH)
+        // POST, (IF JAVASCRIPT  or PATCH)
 
         $student = Student::find($id);
         $input = $request->all();

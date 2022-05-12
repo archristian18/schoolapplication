@@ -9,7 +9,7 @@
       
       <form action="{{ url('game/' .$varable->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        {{ method_field('PATCH') }}
         <input type="hidden" name="id" id="id" value="{{$varable->id}}" id="id" />
         <label>Name</label></br>
         <input type="text" name="name" id="name" value="{{$varable->name}}" class="form-control"></br>
