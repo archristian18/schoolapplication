@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\sample;
+use App\Http\Controllers\sampleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('/game', StudentController::class);
 
+Route::resource('/picture', sampleController::class);

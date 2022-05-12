@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Picture;
 use Illuminate\Http\Request;
 
 class sampleController extends Controller
@@ -13,7 +13,8 @@ class sampleController extends Controller
      */
     public function index()
     {
-        //
+        $x = Picture::all();
+        return view('images.index')->with('image', $x);
     }
 
     /**
@@ -23,7 +24,8 @@ class sampleController extends Controller
      */
     public function create()
     {
-        //
+        return view('images.create');
+
     }
 
     /**
@@ -34,7 +36,12 @@ class sampleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestData = $request->all();
+        $fileName = time().$request->file('photo')->getClientOriginalName();
+        $path = $request->file('photo')->storeAs('`image`', $fileName, 'public');
+        $requestData["photo"] = '/storage/'.$path;
+        Picture::create($requestData);
+        return redirect('picture')->with('flash_message', 'Employee Addedd!');  
     }
 
     /**
@@ -79,6 +86,8 @@ class sampleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Picture::destroy($id);
+        return redirect('picture')->with('flash_message', 'Student deleted!');  
     }
+
 }
