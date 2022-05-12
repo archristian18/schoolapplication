@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body">
                        
-                        <a href="{{ url('/picture/create') }}" class="btn btn-success btn-sm" title="Add New Student">
+                        <a href="{{ route('home.create') }}" class="btn btn-success btn-sm" title="Add New Student">
 
 
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
