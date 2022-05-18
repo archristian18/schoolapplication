@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 
 
+
 Route::resource('/game', StudentController::class);
 
 
