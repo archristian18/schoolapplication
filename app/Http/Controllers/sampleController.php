@@ -24,15 +24,10 @@ class sampleController extends Controller
      */
     public function create()
     {
-      
-    }
-
-
-    public function game()
-    {
         return view('images.create');
-
     }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,8 +37,8 @@ class sampleController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->all();
-        $fileName = time().$request->file('photo')->getClientOriginalName();
-        $path = $request->file('photo')->storeAs('`image`', $fileName, 'public');
+        $fileName = time().$request->file('ambot')->getClientOriginalName();
+        $path = $request->file('ambot')->storeAs('`image`', $fileName, 'public');
         $requestData["photo"] = '/storage/'.$path;
         Picture::create($requestData);
         return redirect('picture')->with('flash_message', 'Employee Addedd!');  

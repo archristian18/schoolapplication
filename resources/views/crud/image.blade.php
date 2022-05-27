@@ -13,7 +13,7 @@
         
       {!! csrf_field() !!}
 
-      <input class="form-control" name="ambot" type="file" id="photo">
+      <input class="form-control" name="photo" type="file" id="photo">
 
         <input type="submit" value="Save" class="btn btn-success"></br>
       </form>

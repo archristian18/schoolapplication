@@ -24,13 +24,13 @@ Route::get('/', function () {
 
 
 
-Route::resource('/game', StudentController::class);
+Route::resource('/crud', StudentController::class);
 
+
+Route::get('/picture/header',[sampleController::class, 'create'])->name('home.create');
 
 Route::resource('/picture', sampleController::class);
 
-
-Route::get('/picture/create',[sampleController::class, 'game'])->name('home.create');
 
 Auth::routes();
 

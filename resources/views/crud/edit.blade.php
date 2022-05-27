@@ -1,4 +1,4 @@
-@extends('students.layout')
+@extends('crud.layout')
 
 @section('title', 'Edit Page')
 
@@ -7,7 +7,7 @@
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
       
-      <form action="{{ url('game/' .$varable->id) }}" method="post">
+      <form action="{{ url('crud/' .$varable->id) }}" method="post">
         {!! csrf_field() !!}
         {{ method_field('PATCH') }}
         <input type="hidden" name="id" id="id" value="{{$varable->id}}" id="id" />

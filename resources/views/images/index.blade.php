@@ -1,4 +1,4 @@
-@extends('students.layout')
+@extends('crud.layout')
 
 @section('title', 'Home Page')
 

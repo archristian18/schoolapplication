@@ -1,4 +1,4 @@
-@extends('students.layout')
+@extends('crud.layout')
 
 @section('title', 'Create Page')
 
@@ -9,7 +9,7 @@
   <div class="card-body">
 
   <!-- {{ url('/student') }} -->
-      <form action="{{ url('/game') }}" method="post">
+      <form action="{{ url('/crud') }}" method="post" enctype="multipart/form-data">
         
       {!! csrf_field() !!}
 
@@ -28,7 +28,13 @@
 
 
 
+        <input class="form-control" name="photo" type="file" id="photo"></br>
+
         <input type="submit" value="Save" class="btn btn-success"></br>
+
+
+
+
       </form>
   
   </div>

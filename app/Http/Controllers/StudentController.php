@@ -13,7 +13,7 @@ class StudentController extends Controller
         // index view (index.blade.php)
         $students = Student::all();
         // Student::all(); get the data from the model, (Student is the name of the model)
-        return view('students.index')->with('students', $students);
+        return view('crud.index')->with('students', $students);
         // view('students.index'),  directory where to go,
         // ->with('students', $students);, 'students' name of the student variable in foreach, 
     }
@@ -22,7 +22,7 @@ class StudentController extends Controller
     {
         // GET
 
-        return view('students.create');
+        return view('crud.create');
 
         // students.create, directory where to view
     }
@@ -34,7 +34,7 @@ class StudentController extends Controller
 
         $input = $request->all();
         Student::create($input);
-        return redirect('game')->with('flash_message', 'Student Addedd!');  
+        return redirect('crud')->with('flash_message', 'Student Addedd!');  
         // 'student is the directory in folder /student in ROUTE:'
     }
     
@@ -43,7 +43,7 @@ class StudentController extends Controller
         // GET
         
         $x = Student::find($id);
-        return view('students.show')->with('varable', $x);
+        return view('crud.show')->with('varable', $x);
     }
     
     public function edit($id)
@@ -51,7 +51,7 @@ class StudentController extends Controller
         // GET
 
         $student = Student::find($id);
-        return view('students.edit')->with('varable', $student);
+        return view('crud.edit')->with('varable', $student);
     }
   
     public function update(Request $request, $id)
@@ -61,12 +61,12 @@ class StudentController extends Controller
         $student = Student::find($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('game')->with('flash_message', 'student Updated!');  
+        return redirect('crud')->with('flash_message', 'student Updated!');  
     }
   
     public function destroy($id)
     {
         Student::destroy($id);
-        return redirect('game')->with('flash_message', 'Student deleted!');  
+        return redirect('crud')->with('flash_message', 'Student deleted!');  
     }
 }
